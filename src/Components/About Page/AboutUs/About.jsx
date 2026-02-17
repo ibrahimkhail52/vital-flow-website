@@ -38,7 +38,7 @@ const navigate = useNavigate()
             Get Started
           </span>
           <span className="absolute inset-0 flex items-center justify-center translate-y-full transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-y-0">
-            Get Started
+            Get Started 
           </span>
         </span>
       </button>
