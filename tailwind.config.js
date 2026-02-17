@@ -6,8 +6,11 @@ export default {
 
     screens: {
       vs:'375px', 
+      sm: '640px',
       md:'768px',
       mmd:'820px',
+      lg: '1024px',
+      xl:'1280px ',
     },
   },
    
