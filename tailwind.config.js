@@ -11,6 +11,8 @@ export default {
       mmd:'820px',
       lg: '1024px',
       xl:'1280px ',
+      
+
     },
   },
    

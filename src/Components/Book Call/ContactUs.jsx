@@ -1,6 +1,4 @@
 import React, { useRef, useEffect } from "react";
-// for heavy scrolling
-// import Lenis from "@studio-freight/lenis";
 import { FiPhone } from "react-icons/fi";
 import { TfiEmail } from "react-icons/tfi";
 import { IoLocationOutline } from "react-icons/io5";
@@ -9,7 +7,7 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 
-import { motion } from "framer-motion";
+import { motion as Motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
 const schema = z.object({
@@ -24,55 +22,31 @@ function ContactUs() {
 
   const navigate = useNavigate();
 
-  // Framer Motion Variants (animation)
   const containerVariants = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: { duration: 0.2},
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 40 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 1.2,
-      ease: [0.22, 1, 0.36, 1],
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: { duration: 0.2 },
     },
-  },
-};
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 40 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 1.2,
+        ease: [0.22, 1, 0.36, 1],
+      },
+    },
+  };
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
 
-  //heavy Scolling 
-  // useEffect(() => {
-//     const lenis = new Lenis({
-//       duration: 1.3, 
-//       smoothWheel: true,
-//       wheelMultiplier: 0.85,
-//       smoothTouch: false,
-//     });
-
-//   function raf(time) {
-//     lenis.raf(time);
-//     requestAnimationFrame(raf);
-//   }
-
-//   requestAnimationFrame(raf);
-
-//   return () => {
-//     lenis.destroy();
-//   };
-// }, []);
-
-
-  // Form validation
   const {
     register,
     handleSubmit,
@@ -83,25 +57,22 @@ const itemVariants = {
     mode: "onChange",
   });
 
-
-
   const onSubmit = (data) => {
     console.log(data);
     reset();
   };
 
   return (
-    <motion.div 
+    <Motion.div
       variants={containerVariants}
       initial="hidden"
       animate="show"
-      ref={scrollRef} 
-      data-scroll-container 
+      ref={scrollRef}
+      data-scroll-container
       className="px-6 max-w-7xl mx-auto md:px-8 lg:px-14 transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
     >
-
       {/* header */}
-      <motion.div 
+      <Motion.div
         className="flex flex-col justify-center items-center gap-5 mt-[3rem] px-5"
         variants={itemVariants}
       >
@@ -117,8 +88,9 @@ const itemVariants = {
           </h2>
 
           <button
-            onClick={() => navigate("/services")} 
-            className=" group relative overflow-hidden rounded-full bg-[rgb(70,134,255)] px-6 py-3 text-white font-semibold transition-transform duration-300">
+            onClick={() => navigate("/services")}
+            className=" group relative overflow-hidden rounded-full bg-[rgb(70,134,255)] px-6 py-3 text-white font-semibold transition-transform duration-300"
+          >
             <span className="relative block overflow-hidden">
               <span className="block transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-y-full">
                 What we do
@@ -129,13 +101,12 @@ const itemVariants = {
             </span>
           </button>
         </div>
-      </motion.div>
-
+      </Motion.div>
 
       {/* Form */}
-      <motion.div
+      <Motion.div
         variants={itemVariants}
-        transition={{ delay: 0.2}} 
+        transition={{ delay: 0.2 }}
         className="mt-[4rem] rounded-3xl border border-[rgb(181,181,181)] flex flex-col mmd:flex-row mmd:justify-between"
       >
         <form
@@ -233,9 +204,7 @@ const itemVariants = {
             </h4>
             <p className="font-semibold leading-[1.7rem]">
               We're here to answer your questions
-              <span className="vs:block">
-                and support your journey.
-              </span>
+              <span className="vs:block">and support your journey.</span>
             </p>
           </div>
 
@@ -272,8 +241,8 @@ const itemVariants = {
             </div>
           </div>
         </div>
-      </motion.div>
-    </motion.div>
+      </Motion.div>
+    </Motion.div>
   );
 }
 
