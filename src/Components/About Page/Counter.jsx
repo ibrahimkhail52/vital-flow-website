@@ -64,10 +64,10 @@ const AboutGallery = () => {
       </section>
 
       {/* ================= COUNTER SECTION ================= */}
-
-      <section className="py- ">
+2
+      <section className=" ">
         <div className="max-w-[1500px] mx-auto ">
-          <div className="grid grid-cols-2 md:grid-cols-4 text-center  relative gap-y-12">
+          <div className="grid grid-cols-2 md:grid-cols-4 text-center  gap-y-12">
             {stats.map((stat, index) => (
               <div
                 key={stat.id}
