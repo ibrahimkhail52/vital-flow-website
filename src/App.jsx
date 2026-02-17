@@ -30,9 +30,13 @@ import DoctorsTeam from "./Components/Doctors/DoctorsTeam/DoctorsTeam";
 // Book a Call Components
 import ContactUs from "./Components/Book Call/ContactUs";
 
+// ScrollToTop
+import ScrollToTop from "./Components/ScrollToTop/ScrollToTop";
+
 export default function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop/>
       <Nav />
 
       <Routes>

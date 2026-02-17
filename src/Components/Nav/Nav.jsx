@@ -47,10 +47,18 @@ const Navbar = () => {
         </ul>
 
         {/* Desktop Button */}
-        <Link to="/book-call" className="hidden md:block">
-          <button className="bg-[#4586FF] text-white px-5 py-3 rounded-full hover:bg-blue-600 transition duration-300">
-            Book a Call
-          </button>
+        <Link
+          to="/book-call"
+          className="hidden md:block group relative overflow-hidden rounded-full bg-[rgb(70,134,255)] px-6 py-3 text-white font-semibold transition-transform duration-300"
+        >
+          <span className="relative block overflow-hidden">
+            <span className="block transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-y-full">
+              Book a Call
+            </span>
+            <span className="absolute inset-0 flex items-center justify-center translate-y-full transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-y-0">
+              Book a Call
+            </span>
+          </span>
         </Link>
 
         {/* Mobile Hamburger */}
@@ -86,9 +94,7 @@ const Navbar = () => {
               Blog
             </Link>
           </li>
-          <li>
-           
-          </li>
+          <li></li>
         </ul>
       </div>
     </nav>
