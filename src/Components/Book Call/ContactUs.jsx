@@ -97,7 +97,7 @@ const itemVariants = {
       animate="show"
       ref={scrollRef} 
       data-scroll-container 
-      className="px-6 xl:px-24 2xl:px-28 transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
+      className="px-6 max-w-7xl mx-auto md:px-8 lg:px-14 transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
     >
 
       {/* header */}
