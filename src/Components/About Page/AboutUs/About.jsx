@@ -30,7 +30,7 @@ const navigate = useNavigate()
 
       {/* Button */}
       <button
-        onClick={() => navigate("/ContactUs")}
+        onClick={() => navigate("/Book-call")}
         className="group relative overflow-hidden rounded-full bg-[#4686FF] px-6 py-3 text-white font-semibold transition-transform duration-300"
       >
         <span className="relative block overflow-hidden">
@@ -38,7 +38,7 @@ const navigate = useNavigate()
             Get Started
           </span>
           <span className="absolute inset-0 flex items-center justify-center translate-y-full transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-y-0">
-            Get Started
+            Get Started 
           </span>
         </span>
       </button>
