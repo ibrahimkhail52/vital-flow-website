@@ -26,6 +26,7 @@ import OurValues from "./Components/About Page/OurValues";
 
 // Doctors Components
 import DoctorsTeam from "./Components/Doctors/DoctorsTeam/DoctorsTeam";
+import SingleDoctor from "./Components/Doctors/Single Doctor/SingleDoctor";
 
 // Book a Call Components
 import ContactUs from "./Components/Book Call/ContactUs";
@@ -55,6 +56,7 @@ export default function App() {
             </>
           }
         />
+
         {/* About */}
         <Route
           path="/about"
@@ -70,6 +72,7 @@ export default function App() {
             </>
           }
         />
+
         {/* Services */}
         <Route
           path="/services"
@@ -81,6 +84,7 @@ export default function App() {
             </>
           }
         />
+
         {/* Doctors */}
         <Route
           path="/doctors"
@@ -92,6 +96,10 @@ export default function App() {
             </>
           }
         />
+
+        {/* Single Doctor Page */}
+        <Route path="/doctors/:id" element={<SingleDoctor />} />
+
         {/* Blogs */}
         <Route
           path="/blogs"
@@ -103,6 +111,7 @@ export default function App() {
             </>
           }
         />
+
         {/* Book a Call */}
         <Route
           path="/book-call"
