@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { motion } from "framer-motion";
+import { motion as Motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import doctordata from "./doctorsData";
 
@@ -22,7 +22,7 @@ function DoctorsTeam() {
   };
 
   return (
-    <motion.section
+    <Motion.section
       className="w-full py-14"
       initial="hidden"
       animate="visible"
@@ -30,7 +30,7 @@ function DoctorsTeam() {
     >
       <div className="mx-auto max-w-[77rem] px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <motion.div
+        <Motion.div
           className="mb-14 text-center"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -43,12 +43,12 @@ function DoctorsTeam() {
           <h1 className="mt-4 text-3xl font-semibold tracking-tight text-gray-950 sm:text-4xl lg:text-5xl leading-tight">
             Meet our dedicated and <br /> experienced team
           </h1>
-        </motion.div>
+        </Motion.div>
 
         {/* Doctor Cards */}
-        <motion.div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <Motion.div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {doctordata.map((doctor) => (
-            <motion.div
+            <Motion.div
               key={doctor.id}
               className="group cursor-pointer"
               variants={cardVariants}
@@ -74,11 +74,11 @@ function DoctorsTeam() {
                   <ArrowRight className="h-4 w-4 text-gray-900" />
                 </div>
               </div>
-            </motion.div>
+            </Motion.div>
           ))}
-        </motion.div>
+        </Motion.div>
       </div>
-    </motion.section>
+    </Motion.section>
   );
 }
 
