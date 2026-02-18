@@ -27,6 +27,7 @@ import OurValues from "./Components/About Page/OurValues";
 
 // Doctors Components
 import DoctorsTeam from "./Components/Doctors/DoctorsTeam/DoctorsTeam";
+import SingleDoctor from "./Components/Doctors/Single Doctor/SingleDoctor";
 
 // Book a Call Components
 import ContactUs from "./Components/Book Call/ContactUs";
