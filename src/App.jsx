@@ -36,7 +36,7 @@ import ScrollToTop from "./Components/ScrollToTop/ScrollToTop";
 export default function App() {
   return (
     <BrowserRouter>
-      <ScrollToTop/>
+      <ScrollToTop />
       <Nav />
 
       <Routes>
@@ -113,6 +113,7 @@ export default function App() {
           element={
             <>
               <ContactUs />
+              <Testimonials />
             </>
           }
         />
