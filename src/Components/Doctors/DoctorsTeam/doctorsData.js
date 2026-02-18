@@ -3,7 +3,7 @@ import OliviaBennett from "../../../assets/homeImages/Olivia Bennett.avif";
 import DavidHarris from "../../../assets/homeImages/David Harris.avif";
 import EmilyRogers from "../../../assets/homeImages/Emily Rogers.avif";
 import MichaelCarter from "../../../assets/homeImages/Michael Carter.avif";
-import SarahThompson from "../../../assets/homeImages/Sarah thompson.avif";
+import SarahThompson from "../../../assets/homeImages/Sarah-thompson.avif";
 
 const doctordata = [
   {
