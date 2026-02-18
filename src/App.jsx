@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-// Navbar , Footer & Contact
+// Navbar, Footer & Contact
 import Nav from "./Components/Nav/Nav";
 import Footer from "./Components/Footer/Footer";
 import Contact from "./Components/Contact/Contact";
@@ -15,6 +15,7 @@ import Features from "./Components/Home/Features";
 import HowItWorks from "./Components/Home/HowItWorks";
 import Testimonials from "./Components/Home/Testimonials/Testimonials";
 import Blog from "./Components/Home/Blog/Blog";
+import SingleBlog from "./Components/Home/Single Blog/SingelBlog";
 import FAQs from "./Components/Home/FAQs";
 
 // About Components
@@ -31,13 +32,17 @@ import SingleDoctor from "./Components/Doctors/Single Doctor/SingleDoctor";
 // Book a Call Components
 import ContactUs from "./Components/Book Call/ContactUs";
 
+// ScrollToTop
+import ScrollToTop from "./Components/ScrollToTop/ScrollToTop";
+
 export default function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Nav />
 
       <Routes>
-        {/* Home */}
+        {/* Home Page */}
         <Route
           path="/"
           element={
@@ -50,14 +55,14 @@ export default function App() {
               <Features />
               <HowItWorks />
               <Testimonials />
-              <Blog />
+              <Blog /> {/* Blog list on home */}
               <FAQs />
               <Contact />
             </>
           }
         />
 
-        {/* About */}
+        {/* About Page */}
         <Route
           path="/about"
           element={
@@ -73,7 +78,7 @@ export default function App() {
           }
         />
 
-        {/* Services */}
+        {/* Services Page */}
         <Route
           path="/services"
           element={
@@ -85,7 +90,7 @@ export default function App() {
           }
         />
 
-        {/* Doctors */}
+        {/* Doctors Page */}
         <Route
           path="/doctors"
           element={
@@ -97,10 +102,7 @@ export default function App() {
           }
         />
 
-        {/* Single Doctor Page */}
-        <Route path="/doctors/:id" element={<SingleDoctor />} />
-
-        {/* Blogs */}
+        {/* Blogs List Page */}
         <Route
           path="/blogs"
           element={
@@ -112,15 +114,11 @@ export default function App() {
           }
         />
 
-        {/* Book a Call */}
-        <Route
-          path="/book-call"
-          element={
-            <>
-              <ContactUs />
-            </>
-          }
-        />
+        {/* Single Blog Page */}
+        <Route path="/blogs/:id" element={<SingleBlog />} />
+
+        {/* Book a Call Page */}
+        <Route path="/book-call" element={<ContactUs />} />
       </Routes>
 
       <Footer />
