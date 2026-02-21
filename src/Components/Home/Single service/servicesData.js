@@ -1,5 +1,5 @@
 // 1. Import Service Icons
-import pediatricsIcon from "../../../assets/homeImages/Pediatrics-icon.svg";
+import pediatricsIcon from "../../../assets/../assets/homeImages/Pediatrics-icon.svg";
 import orthopedicsIcon from "../../../assets/homeImages/Orthopedics-icon.svg";
 import gastroIcon from "../../../assets/homeImages/Gastroenterology-icon.svg";
 import neuroIcon from "../../../assets/homeImages/Neurology-icon.svg";
