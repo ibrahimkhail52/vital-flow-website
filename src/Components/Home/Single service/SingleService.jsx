@@ -45,7 +45,7 @@ export default function SingleService() {
                 <div
                   className="flex items-center gap-2 cursor-pointer group/name"
                   onClick={() => navigate(`/doctors/${service.specialist.id}`)}
-                >
+                > 
                   <h3 className="font-bold text-gray-900 text-lg">
                     {service.specialist.name}
                   </h3>
