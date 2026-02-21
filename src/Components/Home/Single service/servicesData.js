@@ -14,13 +14,7 @@ import neuroBigImg from "../../../assets/homeImages/neuroImg.avif";
 import cardioBigImg from "../../../assets/homeImages/cardioImg.avif";
 import generalBigImg from "../../../assets/homeImages/gastroImg.avif";
 
-// 3. Import Specialist Profile Images
-import drJaneImg from "../../../assets/homeImages/Pediatrics.avif";
-import drAlexImg from "../../../assets/homeImages/orthoImg.avif";
-import drMarkImg from "../../../assets/homeImages/gastroImg.avif";
-import drSarahImg from "../../../assets/homeImages/neuroImg.avif";
-import drJohnImg from  "../../../assets/homeImages/cardioImg.avif";
-import drEmilyImg from "../../../assets/homeImages/generalImg.avif";
+
 
 const serviceData = {
   logo: "/assets/brand-logo.png",
@@ -33,12 +27,12 @@ const serviceData = {
       description:
         "Monitor your child's growth and development closely to ensure their health at every stage.",
       viewBtn: "View Services",
-      bigImg: pediatricsBigImg, // Using imported variable
+      bigImg: pediatricsBigImg,
       specialist: {
         id: 1,
         name: "Dr. Jane Smith",
         position: "Chief Pediatrician",
-        profileImg: drJaneImg, // Using imported variable
+        profileImg: pediatricsBigImg,
       },
       booking: {
         title: "Book a call with specialist Now!!",
@@ -64,7 +58,7 @@ const serviceData = {
         id: 2,
         name: "Dr. Alex Rivera",
         position: "Orthopedic Surgeon",
-        profileImg: drAlexImg,
+        profileImg: orthoBigImg,
       },
       booking: {
         title: "Book a call with specialist Now!!",
@@ -96,7 +90,7 @@ const serviceData = {
         id: 3,
         name: "Dr. Mark Vale",
         position: "Gastroenterologist",
-        profileImg: drMarkImg,
+        profileImg: gastroBigImg,
       },
       booking: {
         title: "Book a call with specialist Now!!",
@@ -120,7 +114,7 @@ const serviceData = {
         id: 4,
         name: "Dr. Sarah Lee",
         position: "Neurologist",
-        profileImg: drSarahImg,
+        profileImg: neuroBigImg,
       },
       booking: {
         title: "Book a call with specialist Now!!",
@@ -145,7 +139,7 @@ const serviceData = {
         id: 5,
         name: "Dr. John Doe",
         position: "Cardiologist",
-        profileImg: drJohnImg,
+        profileImg: cardioBigImg,
       },
       booking: {
         title: "Book a call with specialist Now!!",
@@ -169,7 +163,7 @@ const serviceData = {
         id: 6,
         name: "Dr. Emily Blunt",
         position: "General Physician",
-        profileImg: drEmilyImg,
+        profileImg: generalBigImg,
       },
       booking: {
         title: "Book a call with specialist Now!!",
