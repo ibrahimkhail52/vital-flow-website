@@ -25,6 +25,9 @@ import OurMission from "./Components/About Page/OurMission";
 import OurVision from "./Components/About Page/OurVision";
 import OurValues from "./Components/About Page/OurValues";
 
+// Service
+import SingleService from "./Components/Home/Single service/SingleService";
+
 // Doctors Components
 import DoctorsTeam from "./Components/Doctors/DoctorsTeam/DoctorsTeam";
 import SingleDoctor from "./Components/Doctors/Single Doctor/SingleDoctor";
@@ -89,6 +92,7 @@ export default function App() {
             </>
           }
         />
+        <Route path="/services/:id" element={<SingleService />} />
 
         {/* Doctors Page */}
         <Route
@@ -101,6 +105,8 @@ export default function App() {
             </>
           }
         />
+        {/* Single Doctor Page */}
+        <Route path="/doctors/:id" element={<SingleDoctor />} />
 
         {/* Blogs List Page */}
         <Route
