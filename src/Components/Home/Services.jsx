@@ -12,7 +12,7 @@ import generalIcon from "../../assets/homeImages/Cardiology-icon.svg";
 import { ArrowRight } from "lucide-react";
 
 function Services() {
-  const navigate = useNavigate(); // Hook for programmatic navigation
+  const navigate = useNavigate();
 
   const getServiceIcon = (title) => {
     switch (title.toLowerCase()) {
@@ -52,7 +52,7 @@ function Services() {
           {servicesData.services.map((service, index) => (
             <div
               key={service.id}
-              onClick={() => navigate(`/services/${service.id}`)} // Click anywhere to navigate
+              onClick={() => navigate(`/services/${service.id}`)} 
               className="group cursor-pointer rounded-2xl bg-[#F5FAFF] p-6 text-center shadow-sm opacity-0 translate-y-6 animate-fadeIn transition-all duration-300 "
               style={{ animationDelay: `${index * 150}ms` }}
             >
