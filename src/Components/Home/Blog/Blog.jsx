@@ -1,7 +1,7 @@
 import React from "react";
 import blogData from "./blogData";
 import { CalendarDays, Clock3 } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion as Motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
 function Blog() {
@@ -24,7 +24,7 @@ function Blog() {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 place-items-center">
         {blogData.map((blog, index) => (
           <Link to={`/blogs/${blog.id}`} key={blog.id} className="w-full">
-            <motion.div
+            <Motion.div
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{
@@ -60,7 +60,7 @@ function Blog() {
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </Motion.div>
           </Link>
         ))}
       </div>
