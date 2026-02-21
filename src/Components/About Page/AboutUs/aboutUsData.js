@@ -6,8 +6,8 @@ export const aboutHeroData = {
 };
 // ✅ Import images first
 import doc1 from "../../../assets/About-images/about.1.avif";
-import doc2 from "../../../assets/About-images/about.2.avif";
 import doc3 from "../../../assets/About-images/about.3.avif";
+import doc2 from "../../../assets/About-images/about.2.avif";
 
 // ✅ About Gallery Data (Images + Counters)
 export const aboutGalleryData = {
