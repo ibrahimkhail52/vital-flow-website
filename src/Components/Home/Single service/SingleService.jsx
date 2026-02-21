@@ -26,7 +26,14 @@ export default function SingleService() {
             animate={{ opacity: 1, x: 0 }}
             className="space-y-6"
           >
-            <h1 className="text-5xl font-bold tracking-tight text-gray-950 sm:text-4xl">
+            <div className="mb-6">
+              <img
+                src={service.icon}
+                alt={service.title}
+                className="h-16 w-16 object-contain"
+              />
+            </div>
+            <h1 className="text-4xl font-bold tracking-tight text-gray-950 sm:text-4xl">
               {service.title}
             </h1>
             <p className="max-w-md text-xl leading-relaxed text-gray-600">
@@ -45,7 +52,7 @@ export default function SingleService() {
                 <div
                   className="flex items-center gap-2 cursor-pointer group/name"
                   onClick={() => navigate(`/doctors/${service.specialist.id}`)}
-                > 
+                >
                   <h3 className="font-bold text-gray-900 text-lg">
                     {service.specialist.name}
                   </h3>
@@ -72,7 +79,7 @@ export default function SingleService() {
         </div>
       </section>
 
-      {/* 3. DETAILS SECTION (From your Image) */}
+      {/* 3. DETAILS SECTION */}
       <section className="mx-auto max-w-7xl px-6 py-12">
         <div className="flex flex-col gap-16 lg:flex-row">
           {/* Left: Booking Sidebar */}
