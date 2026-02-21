@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+
 import Checkbox from "./Checkbox";
 import logoimg from "../../assets/Nav img/LOGO.svg";
+
+import { navLinkClass, navItems } from "./navstyles";
+import AnimatedButton from "../AnimatedButton/AnimatedButton";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,7 +18,7 @@ const Navbar = () => {
           <div className="p-2 rounded-lg bg-[#4586FF]">
             <img
               src={logoimg}
-              alt="Vital + Flow Logo"
+              alt="Logo"
               className="w-6 h-6 brightness-0 invert"
             />
           </div>
@@ -24,42 +28,22 @@ const Navbar = () => {
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex gap-8 text-lg font-medium items-center">
-          <li>
-            <Link to="/about" className="hover:text-[#4586FF] transition">
-              About
-            </Link>
-          </li>
-          <li>
-            <Link to="/services" className="hover:text-[#4586FF] transition">
-              Service
-            </Link>
-          </li>
-          <li>
-            <Link to="/doctors" className="hover:text-[#4586FF] transition">
-              Doctor
-            </Link>
-          </li>
-          <li>
-            <Link to="/blogs" className="hover:text-[#4586FF] transition">
-              Blog
-            </Link>
-          </li>
+          {navItems.map((item) => (
+            <li key={item.path}>
+              <Link to={item.path} className={navLinkClass}>
+                {item.name}
+              </Link>
+            </li>
+          ))}
         </ul>
 
         {/* Desktop Button */}
-        <Link
+        <AnimatedButton
+          text="Book a Call"
           to="/book-call"
-          className="hidden md:block group relative overflow-hidden rounded-full bg-[rgb(70,134,255)] px-6 py-3 text-white font-semibold transition-transform duration-300"
-        >
-          <span className="relative block overflow-hidden">
-            <span className="block transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-y-full">
-              Book a Call
-            </span>
-            <span className="absolute inset-0 flex items-center justify-center translate-y-full transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-y-0">
-              Book a Call
-            </span>
-          </span>
-        </Link>
+          bgColor="#4686FF"
+          className="hidden md:block"
+        />
 
         {/* Mobile Hamburger */}
         <div className="md:hidden">
@@ -74,27 +58,17 @@ const Navbar = () => {
         }`}
       >
         <ul className="flex flex-col gap-5 text-lg font-medium">
-          <li>
-            <Link to="/about" onClick={() => setIsOpen(false)}>
-              About
-            </Link>
-          </li>
-          <li>
-            <Link to="/services" onClick={() => setIsOpen(false)}>
-              Service
-            </Link>
-          </li>
-          <li>
-            <Link to="/doctors" onClick={() => setIsOpen(false)}>
-              Doctor
-            </Link>
-          </li>
-          <li>
-            <Link to="/blogs" onClick={() => setIsOpen(false)}>
-              Blog
-            </Link>
-          </li>
-          <li></li>
+          {navItems.map((item) => (
+            <li key={item.path}>
+              <Link
+                to={item.path}
+                onClick={() => setIsOpen(false)}
+                className={navLinkClass}
+              >
+                {item.name}
+              </Link>
+            </li>
+          ))}
         </ul>
       </div>
     </nav>
