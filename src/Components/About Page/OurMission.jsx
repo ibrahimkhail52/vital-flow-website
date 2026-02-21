@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion as Motion } from "framer-motion";
 import { Sparkles, Activity } from "lucide-react";
 import { missionData } from "../About Page/AboutUs/aboutUsData";
 import { useNavigate } from "react-router-dom";
@@ -21,7 +21,7 @@ const navigate = useNavigate();
         {/* ================= LEFT IMAGES ================= */}
         <div className="relative flex justify-center items-center">
           {/* Small Image */}
-          <motion.img
+          <Motion.img
             src={images.small}
             alt="medical"
             initial={{ opacity: 0, y: 40, scale: 0.8 }} // start lower and smaller
@@ -34,7 +34,7 @@ const navigate = useNavigate();
           />
 
           {/* Large Image */}
-          <motion.img
+          <Motion.img
             src={images.large}
             alt="doctor"
             initial={{ opacity: 0, y: 60, scale: 0.9 }}
@@ -49,7 +49,7 @@ const navigate = useNavigate();
         {/* ================= RIGHT CONTENT ================= */}
         <div>
           {/* Badge */}
-          <motion.p
+          <Motion.p
             className="text-black-500 font-medium flex items-center gap-2"
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -58,10 +58,10 @@ const navigate = useNavigate();
           >
             <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
             {badge}
-          </motion.p>
+          </Motion.p>
 
           {/* Heading */}
-          <motion.h2
+          <Motion.h2
             className="text-4xl md:text-5xl font-semibold mt-4 leading-tight text-gray-900"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -69,7 +69,7 @@ const navigate = useNavigate();
             transition={{ duration: 0.6, delay: 0.1 }}
           >
             {heading}
-          </motion.h2>
+          </Motion.h2>
 
           {/* Features */}
           <div className="mt-10 space-y-6">
@@ -77,7 +77,7 @@ const navigate = useNavigate();
               const IconComponent = iconMap[feature.icon];
 
               return (
-                <motion.div
+                <Motion.div
                   key={feature.id}
                   className="flex gap-5"
                   initial="hidden"
@@ -97,13 +97,13 @@ const navigate = useNavigate();
                       {feature.description}
                     </p>
                   </div>
-                </motion.div>
+                </Motion.div>
               );
             })}
           </div>
 
           {/* Button */}
-          <motion.button
+          <Motion.button
             onClick={() => navigate("/book-call")}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -119,7 +119,7 @@ const navigate = useNavigate();
                 {buttonText}
               </span>
             </span>
-          </motion.button>
+          </Motion.button>
         </div>
       </div>
     </section>

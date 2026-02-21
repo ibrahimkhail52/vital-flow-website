@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { motion as Motion } from "framer-motion";
 import { aboutGalleryData } from "../About Page/AboutUs/aboutUsData";
 
 /* ================= COUNTER COMPONENT ================= */
@@ -49,7 +49,7 @@ const AboutGallery = () => {
       <section className="max-w-7xl mx-auto px-6 py-20 overflow-hidden">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {images.map((img) => (
-            <motion.img
+            <Motion.img
               key={img.id}
               src={img.src}
               alt="doctor"

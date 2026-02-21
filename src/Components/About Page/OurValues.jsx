@@ -1,5 +1,5 @@
 import { Edit3, Briefcase, X } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion as Motion } from "framer-motion";
 import { valuesData } from "../About Page/AboutUs/aboutUsData";
 
 const iconMap = {
@@ -21,7 +21,7 @@ const Values = () => {
     <section className="bg-[#f5faff] py-6">
       <div className="max-w-7xl mx-auto px-6 text-center">
         {/* Badge */}
-        <motion.p
+        <Motion.p
           className="text-black-500 font-medium flex items-center justify-center gap-2"
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -30,10 +30,10 @@ const Values = () => {
         >
           <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
           {badge}
-        </motion.p>
+        </Motion.p>
 
         {/* Heading */}
-        <motion.h2
+        <Motion.h2
           className="text-4xl md:text-6xl font-semibold mt-6 text-gray-900 leading-tight max-w-4xl mx-auto"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -41,7 +41,7 @@ const Values = () => {
           transition={{ duration: 0.6, delay: 0.1 }}
         >
           {heading}
-        </motion.h2>
+        </Motion.h2>
 
         {/* Cards */}
         <div className="grid md:grid-cols-3 gap-8 mt-16">
@@ -49,7 +49,7 @@ const Values = () => {
             const IconComponent = iconMap[item.icon];
 
             return (
-              <motion.div
+              <Motion.div
                 key={item.id}
                 variants={cardVariants}
                 initial="hidden"
@@ -74,7 +74,7 @@ const Values = () => {
                 <p className="text-white/90 leading-relaxed">
                   {item.description}
                 </p>
-              </motion.div>
+              </Motion.div>
             );
           })}
         </div>
