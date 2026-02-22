@@ -1,12 +1,12 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+
 import doctor7 from "../../assets/homeImages/doctor7.jpg";
 import boxIcon from "../../assets/homeImages/boxicon.svg";
 import starIcon from "../../assets/homeImages/staricon.svg";
 
-function AboutUs() {
-  const navigate = useNavigate();
+import AnimatedButton from "../AnimatedButton/AnimatedButton";
 
+function AboutUs() {
   const aboutUsData = {
     badge: "About Us",
     title: "Vision for a healthier and brighter tomorrow",
@@ -80,19 +80,14 @@ function AboutUs() {
             </div>
 
             {/* Animated Button */}
-            <button
-              onClick={() => navigate("/services")}
-              className="group relative w-fit overflow-hidden rounded-full bg-[rgb(70,134,255)] px-6 py-3 font-semibold text-white transition-transform duration-300 mt-10"
-            >
-              <span className="relative block overflow-hidden">
-                <span className="block transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-y-full">
-                  {aboutUsData.buttonText}
-                </span>
-                <span className="absolute inset-0 flex items-center justify-center translate-y-full transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-y-0">
-                  {aboutUsData.buttonText}
-                </span>
-              </span>
-            </button>
+            <div className="mt-8">
+              <AnimatedButton
+                text={aboutUsData.buttonText}
+                to="/services"
+                bgColor="#4686FF"
+                className="inline-block"
+              />
+            </div>
           </div>
         </div>
       </div>

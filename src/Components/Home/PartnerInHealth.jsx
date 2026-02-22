@@ -1,5 +1,6 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+
+import AnimatedButton from "../AnimatedButton/AnimatedButton";
 
 import doctor1 from "../../assets/homeImages/doctor1.jpg";
 import patient1 from "../../assets/homeImages/patients1.webp";
@@ -12,7 +13,6 @@ import { FaPlay } from "react-icons/fa";
 import { motion as Motion } from "framer-motion";
 
 function PartnerInHealth() {
-  const navigate = useNavigate();
   const healthData = [
     {
       id: 1,
@@ -73,19 +73,12 @@ function PartnerInHealth() {
 
               {/* Buttons */}
               <div className="mt-8 flex items-center gap-3 sm:flex-row sm:justify-center lg:items-start lg:justify-start">
-                <button
-                  onClick={() => navigate("/book-call")}
-                  className="group relative w-fit overflow-hidden rounded-full bg-[rgb(70,134,255)] px-6 py-3 font-semibold text-white transition-transform duration-300"
-                >
-                  <span className="relative block overflow-hidden">
-                    <span className="block transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-y-full">
-                      {doctor.callBtn}
-                    </span>
-                    <span className="absolute inset-0 flex items-center justify-center translate-y-full transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-y-0">
-                      {doctor.callBtn}
-                    </span>
-                  </span>
-                </button>
+                {/* Book a call Button */}
+                <AnimatedButton
+                  text="Book a Call"
+                  to="/book-call"
+                  bgColor="#4686FF"
+                />
 
                 <a
                   href="https://www.youtube.com/"

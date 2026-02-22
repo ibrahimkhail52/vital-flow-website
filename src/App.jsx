@@ -1,42 +1,31 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-// Navbar, Footer & Contact
-import Nav from "./Components/Nav/Nav";
-import Footer from "./Components/Footer/Footer";
-import Contact from "./Components/Contact/Contact";
-
-// Home Components
-import PartnerInHealth from "./Components/Home/PartnerInHealth";
-import Consultation from "./Components/Home/Consultation";
-import WhyUs from "./Components/Home/WhyUs";
-import Services from "./Components/Home/Services";
-import AboutUs from "./Components/Home/AboutUs";
-import Features from "./Components/Home/Features";
-import HowItWorks from "./Components/Home/HowItWorks";
-import Testimonials from "./Components/Home/Testimonials/Testimonials";
-import Blog from "./Components/Home/Blog/Blog";
-import SingleBlog from "./Components/Home/Single Blog/SingelBlog";
-import FAQs from "./Components/Home/FAQs";
-
-// About Components
-import About from "./Components/About Page/AboutUs/About";
-import Counter from "./Components/About Page/Counter";
-import OurMission from "./Components/About Page/OurMission";
-import OurVision from "./Components/About Page/OurVision";
-import OurValues from "./Components/About Page/OurValues";
-
-// Service
-import SingleService from "./Components/Home/Single service/SingleService";
-
-// Doctors Components
-import DoctorsTeam from "./Components/Doctors/DoctorsTeam/DoctorsTeam";
-import SingleDoctor from "./Components/Doctors/Single Doctor/SingleDoctor";
-
-// Book a Call Components
-import ContactUs from "./Components/Book Call/ContactUs";
-
-// ScrollToTop
-import ScrollToTop from "./Components/ScrollToTop/ScrollToTop";
+import {
+  Nav,
+  Footer,
+  Contact,
+  ContactUs,
+  PartnerInHealth,
+  Consultation,
+  WhyUs,
+  Services,
+  SingleService,
+  AboutUs,
+  Features,
+  HowItWorks,
+  Testimonials,
+  Blog,
+  SingleBlog,
+  FAQs,
+  About,
+  Counter,
+  OurMission,
+  OurValues,
+  OurVision,
+  DoctorsTeam,
+  SingleDoctor,
+  ScrollToTop,
+} from "./index";
 
 export default function App() {
   return (
