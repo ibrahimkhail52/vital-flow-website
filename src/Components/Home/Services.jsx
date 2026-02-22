@@ -1,6 +1,6 @@
 import React from "react";
 import servicesData from "../Home/Single service/servicesData";
-import { Link, useNavigate } from "react-router-dom"; // Added useNavigate
+import { useNavigate } from "react-router-dom"; 
 
 import pediatricsIcon from "../../assets/homeImages/Pediatrics-icon.svg";
 import orthopedicsIcon from "../../assets/homeImages/Orthopedics-icon.svg";

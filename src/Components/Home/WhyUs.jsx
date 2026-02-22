@@ -1,5 +1,5 @@
 import React from "react";
-
+import { useNavigate } from "react-router-dom";
 import AnimatedButton from "../AnimatedButton/AnimatedButton";
 
 import doctor1 from "../../assets/homeImages/doctor0.jpg";
@@ -7,6 +7,7 @@ import doctor2 from "../../assets/homeImages/doctor2.png";
 import doctor3 from "../../assets/homeImages/doctor3.png";
 
 function WhyUs() {
+    const navigate = useNavigate();
   const whyUsData = {
     badge: "Why us",
     title: "Why choose VitalFlow for your healthcare?",
