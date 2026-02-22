@@ -9,6 +9,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 
 import { motion as Motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import styles from "./style";
+import InputField from "./InputField";
 
 const schema = z.object({
   name: z.string().min(3, "Name must be at least 3 characters"),
@@ -19,7 +21,6 @@ const schema = z.object({
 
 function ContactUs() {
   const scrollRef = useRef(null);
-
   const navigate = useNavigate();
 
   const containerVariants = {
@@ -45,7 +46,6 @@ function ContactUs() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
 
   const {
     register,
@@ -82,14 +82,14 @@ function ContactUs() {
         </div>
 
         <div className="flex flex-col justify-center items-center gap-6">
-          <h2 className="text-center font-medium text-[2.5rem] leading-[3rem] text-[rgb(13,13,13)] mmd:leading-[4rem] mmd:text-[3.5rem] lg:text-[4rem] lg:leading-[4.3rem] ">
+          <h2 className="text-center font-medium text-[2.5rem] leading-[3rem] text-[rgb(13,13,13)] mmd:leading-[4rem] mmd:text-[3.5rem] lg:text-[4rem] lg:leading-[4.3rem]">
             Your connection to better{" "}
             <span className="mmd:block">care start here</span>
           </h2>
 
           <button
             onClick={() => navigate("/services")}
-            className=" group relative overflow-hidden rounded-full bg-[rgb(70,134,255)] px-6 py-3 text-white font-semibold transition-transform duration-300"
+            className="group relative overflow-hidden rounded-full bg-[rgb(70,134,255)] px-6 py-3 text-white font-semibold transition-transform duration-300"
           >
             <span className="relative block overflow-hidden">
               <span className="block transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-y-full">
@@ -113,92 +113,63 @@ function ContactUs() {
           onSubmit={handleSubmit(onSubmit)}
           className="flex flex-col gap-[2.5rem] px-8 py-8 mmd:w-[60%]"
         >
-          <div className="flex flex-col mmd:flex-row mmd:items-center mmd:justify-between">
+          <div className="flex flex-col gap-10 mmd:flex-row mmd:items-center mmd:justify-between">
             <div className="flex flex-col gap-5 mmd:w-[45%]">
-              <label htmlFor="name" className="font-medium text-[1.1rem]">
-                Full Name
-              </label>
-              <input
+              <InputField
+                label="Full Name"
+                name="name"
                 type="text"
-                id="name"
-                {...register("name")}
-                className="border border-[rgb(181,181,181)] border-t-0 border-r-0 border-l-0 pb-3 outline-none text-[rgb(36,36,36)] text-[1.1rem] focus:border-b-[rgb(70,134,255)]"
+                register={register}
+                error={errors.name}
                 placeholder="John Carter"
               />
-              {errors.name && (
-                <p className="text-red-500 text-sm">{errors.name.message}</p>
-              )}
             </div>
 
             <div className="flex flex-col gap-5 mmd:w-[45%]">
-              <label htmlFor="email" className="font-medium">
-                Email Address
-              </label>
-              <input
-                id="email"
+              <InputField
+                label="Email Address"
+                name="email"
                 type="email"
-                {...register("email")}
-                className="border border-[rgb(181,181,181)] border-t-0 border-r-0 border-l-0 pb-3 outline-none text-[rgb(36,36,36)] text-[1.1rem] focus:border-b-[rgb(70,134,255)]"
+                register={register}
+                error={errors.email}
                 placeholder="yourname@gmail.com"
               />
-              {errors.email && (
-                <p className="text-red-500 text-sm">{errors.email.message}</p>
-              )}
             </div>
           </div>
 
-          <div className="flex flex-col gap-5">
-            <label htmlFor="number" className="font-medium">
-              Phone Number
-            </label>
-            <input
-              id="number"
-              type="tel"
-              {...register("phone")}
-              className="border border-[rgb(181,181,181)] border-t-0 border-r-0 border-l-0 pb-3 outline-none text-[rgb(36,36,36)] text-[1.1rem] focus:border-b-[rgb(70,134,255)]"
-              placeholder="+123 456 789"
-            />
-            {errors.phone && (
-              <p className="text-red-500 text-sm">{errors.phone.message}</p>
-            )}
-          </div>
+          <InputField
+            label="Phone Number"
+            name="phone"
+            type="tel"
+            register={register}
+            error={errors.phone}
+            placeholder="+123 456 789"
+          />
 
-          <div className="flex flex-col gap-5">
-            <label htmlFor="message" className="font-medium">
-              Message
-            </label>
-            <textarea
-              id="message"
-              rows="3"
-              {...register("message")}
-              className="border border-[rgb(181,181,181)] border-t-0 border-r-0 border-l-0 pb-3 outline-none text-[rgb(36,36,36)] text-[1.1rem] focus:border-b-[rgb(70,134,255)]"
-              placeholder="Type your message here !!!"
-            ></textarea>
-            {errors.message && (
-              <p className="text-red-500 text-sm">{errors.message.message}</p>
-            )}
-          </div>
+          <InputField
+            label="Message"
+            name="message"
+            type="textarea"
+            register={register}
+            error={errors.message}
+            placeholder="Type your message here !!!"
+            rows={3}
+          />
 
           <button
             type="submit"
             disabled={!isValid}
-            className={`
-              mt-2 px-8 py-3 rounded-full text-white font-semibold
-              transition-all duration-300
-              ${
-                isValid
-                  ? "bg-[rgb(70,134,255)] hover:bg-[rgb(60,120,240)] cursor-pointer"
-                  : "bg-[rgb(146,193,255)] cursor-not-allowed"
-              }
-            `}
+            className={`${styles.submitBase} ${
+              isValid ? styles.submitActive : styles.submitDisabled
+            }`}
           >
             Submit
           </button>
         </form>
 
         {/* reach out */}
-        <div className=" bg-[rgb(62,130,255)] px-8 rounded-b-3xl  mmd:w-[40%] mmd:rounded-none mmd:rounded-tr-3xl mmd:rounded-br-3xl mmd:py-[7rem]">
-          <div className="pt-6 pb-12 text-white flex flex-col gap-4 border border-gray-300 border-t-0 border-l-0 border-r-0 ">
+        <div className="bg-[rgb(62,130,255)] px-8 rounded-b-3xl mmd:w-[40%] mmd:rounded-none mmd:rounded-tr-3xl mmd:rounded-br-3xl mmd:py-[7rem]">
+          <div className="pt-6 pb-12 text-white flex flex-col gap-4 border border-gray-300 border-t-0 border-l-0 border-r-0">
             <h4 className="text-[2.2rem] font-semibold leading-[2.7rem] lg:text-[2.4rem] xl:text-[2.7rem]">
               Reach out directly
             </h4>
@@ -209,36 +180,25 @@ function ContactUs() {
           </div>
 
           <div className="pt-12 pb-8 text-white flex flex-col gap-6">
-            <div className="flex gap-3 items-center">
-              <a
-                href="tel:+14871207980"
-                className="flex gap-3 items-center text-white transition-colors duration-300 hover:text-gray-300"
-              >
-                <FiPhone className="text-[1.3rem]" />
-                <p className="font-medium text-[1.06rem]">(487) 120-7980</p>
-              </a>
-            </div>
-            <div className="flex gap-3 items-center">
-              <a
-                href="mailto:name@gmail.com"
-                className="flex gap-3 items-center text-white transition-colors duration-300 hover:text-gray-300"
-              >
-                <TfiEmail className="text-[1.3rem]" />
-                <p className="font-medium text-[1.06rem]">name@gmail.com</p>
-              </a>
-            </div>
+            <a href="tel:+14871207980" className={styles.contactLink}>
+              <FiPhone className="text-[1.3rem]" />
+              <p className="font-medium text-[1.06rem]">(487) 120-7980</p>
+            </a>
 
-            <div className="flex gap-3 items-center">
-              <a
-                href="https://www.google.com/maps/search/?api=1&query=Riyadh,+KSA"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex gap-3 items-center text-white transition-colors duration-300 hover:text-gray-300"
-              >
-                <IoLocationOutline className="text-[1.3rem]" />
-                <p className="font-medium text-[1.06rem]">Riyadh, KSA</p>
-              </a>
-            </div>
+            <a href="mailto:name@gmail.com" className={styles.contactLink}>
+              <TfiEmail className="text-[1.3rem]" />
+              <p className="font-medium text-[1.06rem]">name@gmail.com</p>
+            </a>
+
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=Riyadh,+KSA"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.contactLink}
+            >
+              <IoLocationOutline className="text-[1.3rem]" />
+              <p className="font-medium text-[1.06rem]">Riyadh, KSA</p>
+            </a>
           </div>
         </div>
       </Motion.div>

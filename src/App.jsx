@@ -11,7 +11,7 @@ import Consultation from "./Components/Home/Consultation";
 import WhyUs from "./Components/Home/WhyUs";
 import Services from "./Components/Home/Services";
 import AboutUs from "./Components/Home/AboutUs";
-import Features from "./Components/Home/Features";
+import Features from "./Components/Home/Features/Features";
 import HowItWorks from "./Components/Home/HowItWorks";
 import Testimonials from "./Components/Home/Testimonials/Testimonials";
 import Blog from "./Components/Home/Blog/Blog";
