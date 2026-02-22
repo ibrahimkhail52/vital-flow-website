@@ -116,7 +116,11 @@ function WhyUs() {
 
               <div className="mt-4 space-y-4">
                 {whyUsData.doctorsCard.doctors.map((doc) => (
-                  <div key={doc.id} className="flex items-center gap-3">
+                  <div
+                    onClick={() => navigate(`/doctors/${doc.id}`)}
+                    key={doc.id}
+                    className="flex items-center gap-3 cursor-pointer"
+                  >
                     <img
                       src={doc.img}
                       alt={doc.name}

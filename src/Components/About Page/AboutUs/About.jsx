@@ -1,8 +1,13 @@
 import { aboutHeroData } from "../AboutUs/aboutUsData";
+<<<<<<< HEAD
 import { motion } from "framer-motion";
 
 
 import AnimatedButton from "../../AnimatedButton/AnimatedButton";
+=======
+import { motion as Motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
+>>>>>>> ea00d2e1cb16dd0394fc44f163bba3fe72cf1d13
 
 const About = () => {
   const { badge, title, buttonText } = aboutHeroData;
@@ -10,7 +15,7 @@ const About = () => {
   return (
     <section className="max-w-4xl mx-auto px-6 pt-20 text-center">
       {/* Badge */}
-      <motion.p
+      <Motion.p
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
@@ -18,17 +23,17 @@ const About = () => {
       >
         <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
         {badge}
-      </motion.p>
+      </Motion.p>
 
       {/* Title */}
-      <motion.h1
+      <Motion.h1
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         className="text-4xl md:text-7xl font-semibold leading-tight text-gray-900 mb-8"
       >
         {title}
-      </motion.h1>
+      </Motion.h1>
 
       {/* Button */}
       <AnimatedButton

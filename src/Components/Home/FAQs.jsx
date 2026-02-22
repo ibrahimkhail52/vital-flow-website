@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Plus, X } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion as Motion, AnimatePresence } from "framer-motion";
 
 const faqData = [
   {
@@ -72,7 +72,7 @@ export default function FAQs() {
               {/* Animated Answer */}
               <AnimatePresence initial={false}>
                 {isOpen && (
-                  <motion.div
+                  <Motion.div
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: "auto", opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
@@ -82,7 +82,7 @@ export default function FAQs() {
                     <p className="mt-4 text-gray-600 leading-relaxed">
                       {item.answer}
                     </p>
-                  </motion.div>
+                  </Motion.div>
                 )}
               </AnimatePresence>
             </div>

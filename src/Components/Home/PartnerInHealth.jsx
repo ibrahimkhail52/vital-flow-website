@@ -10,7 +10,7 @@ import patient3 from "../../assets/homeImages/patients3.webp";
 import { TiStarFullOutline } from "react-icons/ti";
 import { FaPlay } from "react-icons/fa";
 
-import { motion } from "framer-motion";
+import { motion as Motion } from "framer-motion";
 
 function PartnerInHealth() {
   const healthData = [
@@ -32,7 +32,7 @@ function PartnerInHealth() {
     <section className="w-full bg-white py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {healthData.map((doctor) => (
-          <motion.div
+          <Motion.div
             key={doctor.id}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -40,7 +40,7 @@ function PartnerInHealth() {
             className="flex flex-col items-center justify-center gap-10 lg:flex-row lg:gap-12"
           >
             {/* Text Content */}
-            <motion.div
+            <Motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1.1, delay: 0.2, ease: "easeOut" }}
@@ -115,10 +115,10 @@ function PartnerInHealth() {
                   </p>
                 </div>
               </div>
-            </motion.div>
+            </Motion.div>
 
             {/* Doctor Image */}
-            <motion.div
+            <Motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1.1, delay: 0.35, ease: "easeOut" }}
@@ -129,8 +129,8 @@ function PartnerInHealth() {
                 alt="Doctor"
                 className="w-full max-w-md sm:max-w-lg lg:max-w-2xl h-[420px] sm:h-[500px] lg:h-[600px] rounded-[40px] object-cover shadow-lg"
               />
-            </motion.div>
-          </motion.div>
+            </Motion.div>
+          </Motion.div>
         ))}
       </div>
     </section>

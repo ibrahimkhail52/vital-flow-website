@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { motion } from "framer-motion";
+import { motion as Motion } from "framer-motion";
 import doctordata from "../DoctorsTeam/doctorsData";
 import { FaLinkedinIn, FaTwitter, FaFacebookF } from "react-icons/fa";
 
@@ -12,7 +12,7 @@ function SingleDoctor() {
     return <p className="text-center mt-10 text-xl">Doctor not found</p>;
 
   return (
-    <motion.div
+    <Motion.div
       className="max-w-6xl mx-auto px-6 mt-10 mb-20"
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
@@ -108,7 +108,7 @@ function SingleDoctor() {
           </p>
         </div>
       </div>
-    </motion.div>
+    </Motion.div>
   );
 }
 

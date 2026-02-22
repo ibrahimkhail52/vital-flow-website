@@ -1,5 +1,6 @@
 import React from "react";
 import servicesData from "../Home/Single service/servicesData";
+import { Link, useNavigate } from "react-router-dom"; // Added useNavigate
 
 import pediatricsIcon from "../../assets/homeImages/Pediatrics-icon.svg";
 import orthopedicsIcon from "../../assets/homeImages/Orthopedics-icon.svg";
@@ -11,6 +12,8 @@ import generalIcon from "../../assets/homeImages/Cardiology-icon.svg";
 import { ArrowRight } from "lucide-react";
 
 function Services() {
+  const navigate = useNavigate();
+
   const getServiceIcon = (title) => {
     switch (title.toLowerCase()) {
       case "pediatrics":
@@ -39,7 +42,6 @@ function Services() {
             <span className="h-2.5 w-2.5 rounded-full bg-blue-600"></span>
             <span className="text-sm font-medium text-gray-900">Services</span>
           </div>
-
           <h1 className="mt-4 text-3xl font-semibold tracking-tight text-gray-950 sm:text-4xl lg:text-5xl whitespace-pre-line">
             {servicesData.headingTitle}
           </h1>
@@ -50,7 +52,8 @@ function Services() {
           {servicesData.services.map((service, index) => (
             <div
               key={service.id}
-              className="rounded-2xl bg-[#F5FAFF] p-6 text-center shadow-sm opacity-0 translate-y-6 animate-fadeIn"
+              onClick={() => navigate(`/services/${service.id}`)} 
+              className="group cursor-pointer rounded-2xl bg-[#F5FAFF] p-6 text-center shadow-sm opacity-0 translate-y-6 animate-fadeIn transition-all duration-300 "
               style={{ animationDelay: `${index * 150}ms` }}
             >
               {/* Icon */}
@@ -74,26 +77,25 @@ function Services() {
                 {service.description}
               </p>
 
-              {/* Button */}
+              {/* Button UI (Now visual only, card handles click) */}
               <div className="mt-6 flex justify-center">
-                <button className="inline-flex items-center gap-2 px-8 py-3 text-lg font-semibold text-black transition-transform duration-200 hover:scale-105 active:scale-95">
+                <div className="inline-flex items-center gap-2 px-8 py-3 text-lg font-semibold text-black transition-transform duration-200 group-hover:scale-105">
                   {service.viewBtn}
-                  <ArrowRight className="h-5 w-5 transition-transform duration-200 hover:translate-x-1" />
-                </button>
+                  <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-2" />
+                  {/* group-hover:translate-x-2 adds the space on hover */}
+                </div>
               </div>
             </div>
           ))}
         </div>
       </div>
 
-      {/* Tailwind CSS Animations */}
       <style>
         {`
           @keyframes fadeIn {
             0% { opacity: 0; transform: translateY(20px); }
             100% { opacity: 1; transform: translateY(0); }
           }
-
           .animate-fadeIn {
             animation: fadeIn 0.5s forwards;
           }
