@@ -1,16 +1,8 @@
 import { aboutHeroData } from "../AboutUs/aboutUsData";
-<<<<<<< HEAD
-<<<<<<< HEAD
-import { motion } from "framer-motion";
-
 
 import AnimatedButton from "../../AnimatedButton/AnimatedButton";
-=======
-=======
->>>>>>> ea00d2e1cb16dd0394fc44f163bba3fe72cf1d13
+
 import { motion as Motion } from "framer-motion";
-import { useNavigate } from "react-router-dom";
->>>>>>> ea00d2e1cb16dd0394fc44f163bba3fe72cf1d13
 
 const About = () => {
   const { badge, title, buttonText } = aboutHeroData;
