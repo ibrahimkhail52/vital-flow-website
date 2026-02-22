@@ -83,7 +83,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  to="/contact"
+                  to="/book-call"
                   className="text-sm sm:text-base hover:text-[#999797] transition"
                 >
                   Contact
@@ -171,7 +171,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  to="/blog-detail"
+                  to="/blogs/1"
                   className="text-sm sm:text-base hover:text-[#999797] transition"
                 >
                   Blogs (CMS)

@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import blogData from "../Blog/blogData";
-import { motion } from "framer-motion";
+import { motion as Motion } from "framer-motion";
 
 function SingleBlog() {
   const { id } = useParams();
@@ -22,7 +22,7 @@ function SingleBlog() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 py-12">
       {/* Date & Title */}
-      <motion.div
+      <Motion.div
         className="flex flex-col justify-center items-center text-center"
         initial="hidden"
         animate="visible"
@@ -33,7 +33,7 @@ function SingleBlog() {
         <h1 className="mt-10 text-4xl font-bold text-gray-900">{blog.title}</h1>
 
         {/* Profile */}
-        <motion.div
+        <Motion.div
           className="flex items-center gap-6 mt-8"
           custom={0.2}
           initial="hidden"
@@ -53,11 +53,11 @@ function SingleBlog() {
               Pediatrician
             </p>
           </div>
-        </motion.div>
-      </motion.div>
+        </Motion.div>
+      </Motion.div>
 
       {/* Main Image */}
-      <motion.div
+      <Motion.div
         className="mt-16 -mx-4 sm:-mx-6 lg:-mx-36"
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
@@ -68,20 +68,20 @@ function SingleBlog() {
           alt={blog.title}
           className="w-full rounded-2xl object-cover"
         />
-      </motion.div>
+      </Motion.div>
 
       {/* Short Description */}
-      <motion.p
+      <Motion.p
         className="mt-16 text-gray-700 text-xl"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.6 }}
       >
         {blog.desc}
-      </motion.p>
+      </Motion.p>
 
       {/* Effects Section */}
-      <motion.section
+      <Motion.section
         className="mt-8"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
@@ -93,10 +93,10 @@ function SingleBlog() {
         <p className="mt-2 text-gray-700 whitespace-pre-line text-lg font-medium">
           {blog.effects.descrip}
         </p>
-      </motion.section>
+      </Motion.section>
 
       {/* Effective Strategies Section */}
-      <motion.section
+      <Motion.section
         className="mt-8"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
@@ -108,7 +108,7 @@ function SingleBlog() {
         <p className="mt-2 text-gray-700 whitespace-pre-line text-lg font-medium">
           {blog.effective.descrip}
         </p>
-      </motion.section>
+      </Motion.section>
     </div>
   );
 }

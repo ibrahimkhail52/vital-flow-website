@@ -77,6 +77,7 @@ export default function App() {
             </>
           }
         />
+        <Route path="/services/:id" element={<SingleService />} />
 
         {/* Doctors Page */}
         <Route
@@ -89,6 +90,8 @@ export default function App() {
             </>
           }
         />
+        {/* Single Doctor Page */}
+        <Route path="/doctors/:id" element={<SingleDoctor />} />
 
         {/* Blogs List Page */}
         <Route
