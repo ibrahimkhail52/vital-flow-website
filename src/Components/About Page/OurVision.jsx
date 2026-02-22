@@ -1,11 +1,12 @@
 import { Check } from "lucide-react";
 import { motion as Motion } from "framer-motion";
 import { visionData } from "../About Page/AboutUs/aboutUsData";
-import { useNavigate } from "react-router-dom";
+
+import AnimatedButton from "../AnimatedButton/AnimatedButton";
 
 const Vision = () => {
   const { badge, heading, buttonText, image, points } = visionData;
-const navigate = useNavigate();
+
   // Animation variants for points
   const pointVariants = {
     hidden: { opacity: 0, x: -20 },
@@ -15,7 +16,7 @@ const navigate = useNavigate();
   return (
     <section className="py-20">
       <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
-        {/* ================= LEFT CONTENT ================= */}
+        {/* LEFT CONTENT */}
         <div>
           {/* Badge */}
           <Motion.p
@@ -60,25 +61,27 @@ const navigate = useNavigate();
             ))}
           </div>
 
-          {/* Button */}
-
-          <button
-            onClick={() => navigate("/book-call ")}
-            className="group relative overflow-hidden rounded-full bg-[#4686FF] px-6 py-3 text-white font-semibold transition-transform duration-300 mt-12"
-          >
-            <span className="relative block overflow-hidden">
-              <span className="block transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-y-full">
-                Book a call
-              </span>
-              <span className="absolute inset-0 flex items-center justify-center translate-y-full transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-y-0">
-                Book a call
-              </span>
-            </span>
-          </button>
+          {/* AnimatedButton */}
+          <AnimatedButton
+            text={buttonText}
+            to="/book-call"
+            bgColor="#4686FF"
+            className="inline-block mt-10"
+          />
         </div>
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+        {/* RIGHT IMAGE */}
+        <motion.div
+=======
         {/* ================= RIGHT IMAGE ================= */}
         <Motion.div
+>>>>>>> ea00d2e1cb16dd0394fc44f163bba3fe72cf1d13
+=======
+        {/* ================= RIGHT IMAGE ================= */}
+        <Motion.div
+>>>>>>> ea00d2e1cb16dd0394fc44f163bba3fe72cf1d13
           initial={{ opacity: 0, x: 60 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.5 }}

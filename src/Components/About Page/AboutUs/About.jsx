@@ -1,10 +1,20 @@
 import { aboutHeroData } from "../AboutUs/aboutUsData";
+<<<<<<< HEAD
+<<<<<<< HEAD
+import { motion } from "framer-motion";
+
+
+import AnimatedButton from "../../AnimatedButton/AnimatedButton";
+=======
+=======
+>>>>>>> ea00d2e1cb16dd0394fc44f163bba3fe72cf1d13
 import { motion as Motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+>>>>>>> ea00d2e1cb16dd0394fc44f163bba3fe72cf1d13
 
 const About = () => {
   const { badge, title, buttonText } = aboutHeroData;
-const navigate = useNavigate()
+
   return (
     <section className="max-w-4xl mx-auto px-6 pt-20 text-center">
       {/* Badge */}
@@ -29,19 +39,12 @@ const navigate = useNavigate()
       </Motion.h1>
 
       {/* Button */}
-      <button
-        onClick={() => navigate("/Book-call")}
-        className="group relative overflow-hidden rounded-full bg-[#4686FF] px-6 py-3 text-white font-semibold transition-transform duration-300"
-      >
-        <span className="relative block overflow-hidden">
-          <span className="block transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-y-full">
-            Get Started
-          </span>
-          <span className="absolute inset-0 flex items-center justify-center translate-y-full transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-y-0">
-            Get Started 
-          </span>
-        </span>
-      </button>
+      <AnimatedButton
+        text={buttonText}
+        to="/book-call"
+        bgColor="#4686FF"
+        className="inline-block"
+      />
     </section>
   );
 };

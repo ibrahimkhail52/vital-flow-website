@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { motion as Motion } from "framer-motion";
 import { aboutGalleryData } from "../About Page/AboutUs/aboutUsData";
 
-/* ================= COUNTER COMPONENT ================= */
+/* COUNTER COMPONENT */
 
 const Counter = ({ end, suffix, label }) => {
   const [count, setCount] = useState(0);
@@ -37,14 +37,14 @@ const Counter = ({ end, suffix, label }) => {
   );
 };
 
-/* ================= ABOUT GALLERY ================= */
+/* ABOUT GALLERY */
 
 const AboutGallery = () => {
   const { images, stats } = aboutGalleryData;
 
   return (
     <>
-      {/* ================= IMAGES SECTION ================= */}
+      {/* IMAGES SECTION */}
 
       <section className="max-w-7xl mx-auto px-6 py-20 overflow-hidden">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -63,8 +63,8 @@ const AboutGallery = () => {
         </div>
       </section>
 
-      {/* ================= COUNTER SECTION ================= */}
-2
+      {/* COUNTER SECTION */}
+
       <section className=" ">
         <div className="max-w-[1500px] mx-auto ">
           <div className="grid grid-cols-2 md:grid-cols-4 text-center  gap-y-12">

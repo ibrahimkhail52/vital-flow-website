@@ -1,9 +1,11 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import logoimg from "../../assets/Nav img/LOGO.svg";
 
+import AnimatedButton from "../AnimatedButton/AnimatedButton";
+
 export default function Footer() {
-  const navigate = useNavigate();
+ 
 
   return (
     <footer className="py-12 sm:py-16 px-4 sm:px-6 md:px-12 lg:px-44 text-gray-900">
@@ -24,19 +26,15 @@ export default function Footer() {
           </p>
 
           <div className="flex justify-center md:justify-start">
-            <button
-              onClick={() => navigate("/book-call")}
-              className="group relative overflow-hidden rounded-full bg-[rgb(70,134,255)] px-6 py-3 text-white font-semibold transition-transform duration-300 w-full sm:w-auto"
-            >
-              <span className="relative block overflow-hidden">
-                <span className="block transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-y-full">
-                  Book a Call
-                </span>
-                <span className="absolute inset-0 flex items-center justify-center translate-y-full transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-y-0">
-                  Book a Call
-                </span>
-              </span>
-            </button>
+            {/* Animated Button */}
+            <div className="mt-8">
+              <AnimatedButton
+                text="Book a Call"
+                to="/book-call"
+                bgColor="#4686FF"
+                className="inline-block"
+              />
+            </div>
           </div>
         </div>
 
