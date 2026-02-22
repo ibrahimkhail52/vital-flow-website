@@ -71,8 +71,13 @@ const Vision = () => {
         </div>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         {/* RIGHT IMAGE */}
         <motion.div
+=======
+        {/* ================= RIGHT IMAGE ================= */}
+        <Motion.div
+>>>>>>> ea00d2e1cb16dd0394fc44f163bba3fe72cf1d13
 =======
         {/* ================= RIGHT IMAGE ================= */}
         <Motion.div
